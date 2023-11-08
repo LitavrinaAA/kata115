@@ -36,12 +36,11 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void saveUser(String name, String lastName, byte age) {
         try {
-            statement.executeUpdate(new StringBuilder()
-                    .append("INSERT INTO user (name,lastName, age) value (")
-                    .append(name).append(",")
-                    .append(lastName).append(",")
-                    .append(age).append(")")
-                    .toString());
+            statement.executeUpdate("INSERT INTO user (name ,lastName, age) value ( '" +
+                    name + "','" +
+                    lastName + "','" +
+                    age + "' )");
+//            statement.executeUpdate("INSERT INTO user (name ,lastName, age) value ('Ivan','Ivanov','32' )");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
