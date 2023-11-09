@@ -40,7 +40,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     name + "','" +
                     lastName + "','" +
                     age + "' )");
-//            statement.executeUpdate("INSERT INTO user (name ,lastName, age) value ('Ivan','Ivanov','32' )");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -14,14 +14,14 @@ public class Main {
         userService.createUsersTable();
 
         userService.saveUser("Ivan", "Ivanov", (byte) 100);
-        userService.saveUser("Petr", "Petrov", (byte) 25);
-        userService.saveUser("Yuri", "Sidorov", (byte) 30);
-        userService.saveUser("Masha", "Ivanova", (byte) 38);
-
-        userService.removeUserById(1);
-        userService.getAllUsers();
-        userService.cleanUsersTable();
-        userService.dropUsersTable();
+//        userService.saveUser("Petr", "Petrov", (byte) 25);
+//        userService.saveUser("Yuri", "Sidorov", (byte) 30);
+//        userService.saveUser("Masha", "Ivanova", (byte) 38);
+//
+//        userService.removeUserById(1);
+//        userService.getAllUsers();
+//        userService.cleanUsersTable();
+//        userService.dropUsersTable();
 
     }
 }
