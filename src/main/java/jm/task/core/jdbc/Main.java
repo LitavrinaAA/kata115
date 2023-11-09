@@ -11,9 +11,9 @@ public class Main {
     private final static UserService userService = new UserServiceImpl();
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
-        userService.createUsersTable();
-
-        userService.saveUser("Ivan", "Ivanov", (byte) 100);
+//        userService.createUsersTable();
+//
+//        userService.saveUser("Ivan", "Ivanov", (byte) 100);
 //        userService.saveUser("Petr", "Petrov", (byte) 25);
 //        userService.saveUser("Yuri", "Sidorov", (byte) 30);
 //        userService.saveUser("Masha", "Ivanova", (byte) 38);
