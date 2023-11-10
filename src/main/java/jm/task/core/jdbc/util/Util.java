@@ -11,7 +11,6 @@ public class Util {
     public static final String USER = "root";
     public static final String PASS = "39010703Zz_";
     public static final String URL = "jdbc:mysql://localhost:3306/kata1";
-    //"jdbc:mysql://localhost:3306/mysql";
     public static Connection connection;
     public static Statement statement;
 
