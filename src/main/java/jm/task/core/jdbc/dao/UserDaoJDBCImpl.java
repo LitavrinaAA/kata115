@@ -1,12 +1,15 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.SQLException;
 
 
+import static jm.task.core.jdbc.util.Util.connection;
 import static jm.task.core.jdbc.util.Util.statement;
 
 public class UserDaoJDBCImpl implements UserDao {
@@ -15,12 +18,14 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable()  {
+        String sql = "CREATE TABLE IF NOT EXISTS user(" +
+                "id int auto_increment primary key," +
+                "name varchar(30) not null ," +
+                "lastName varchar(30) not null ," +
+                "age int not null )";
         try {
-            statement.executeUpdate( "CREATE TABLE IF NOT EXISTS user(" +
-                    "id int auto_increment primary key," +
-                    "name varchar(30) not null ," +
-                    "lastName varchar(30) not null ," +
-                    "age int not null )");
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -35,11 +40,13 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
+        String sql = "INSERT INTO user (name ,lastName, age) values (?, ?, ?)";
         try {
-            statement.executeUpdate("INSERT INTO user (name ,lastName, age) value ( '" +
-                    name + "','" +
-                    lastName + "','" +
-                    age + "' )");
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setString(2, lastName);
+            stmt.setByte(3, age);
+            stmt.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
