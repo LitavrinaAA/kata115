@@ -18,17 +18,17 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable()  {
-//        String sql = "CREATE TABLE IF NOT EXISTS user(" +
-//                "id int auto_increment primary key," +
-//                "name varchar(30) not null ," +
-//                "lastName varchar(30) not null ," +
-//                "age int not null )";
-//        try {
-//            PreparedStatement stmt = connection.prepareStatement(sql);
-//            stmt.execute();
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
+        String sql = "CREATE TABLE IF NOT EXISTS user(" +
+                "id int auto_increment primary key," +
+                "name varchar(30) not null ," +
+                "lastName varchar(30) not null ," +
+                "age int not null )";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void dropUsersTable() {

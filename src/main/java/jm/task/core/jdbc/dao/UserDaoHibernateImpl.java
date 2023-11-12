@@ -13,10 +13,6 @@ import java.util.List;
 public class UserDaoHibernateImpl implements UserDao {
     private final SessionFactory sessionFactory = Util.getConnection();
 
-    //    private final SessionFactory factory = new Configuration()
-//            .configure("hibernate.cfg.xml")
-//            .addAnnotatedClass(User.class)
-//            .buildSessionFactory();
     public UserDaoHibernateImpl() {
 
     }
