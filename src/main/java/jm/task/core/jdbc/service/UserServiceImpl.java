@@ -11,8 +11,8 @@ import java.util.List;
 
 
 public class UserServiceImpl implements UserService {
-    UserDao userDaoJDBC = new UserDaoJDBCImpl();
-    UserDaoHibernateImpl userDao = new UserDaoHibernateImpl();
+    private UserDao userDaoJDBC = new UserDaoJDBCImpl();
+    private UserDao userDao = new UserDaoHibernateImpl();
     public void createUsersTable() {
         userDao.createUsersTable();
     }
