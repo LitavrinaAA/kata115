@@ -16,7 +16,7 @@ public class Util {
     // реализуйте настройку соеденения с БД
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String USER = "root";
-    private static final String PASS = "39010703Zz_";
+    private static final String PASS = "root";
     private static final String URL = "jdbc:mysql://localhost:3306/kata1";
 
 
